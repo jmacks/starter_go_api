@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"text/template"
@@ -14,6 +15,7 @@ type Page struct {
 var templates = template.Must(template.ParseFiles("edit.html", "view.html"))
 
 func main() {
+	fmt.Println("it works!")
 	http.HandleFunc("/view/", viewHandler)
 	http.HandleFunc("/edit/", editHandler)
 	http.HandleFunc("/save/", saveHandler)
